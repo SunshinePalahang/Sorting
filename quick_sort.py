@@ -7,11 +7,23 @@ def sort(nums, left, right):
 
 def partition(nums, left, right):
     i = left
-    j = right
+    j = right - 1
     pivot = nums[right]
     
+    while i < j:
+        while i < right and nums[i] < pivot:
+            i += 1
+        while j > left and nums[j] >= pivot:
+            j -= 1 
+        if i < j:
+            nums[i], nums[j]= nums[j], nums[i]
+     
+    if nums[i] > pivot:
+        nums[i], nums[right] = nums[right], nums[i]
+    return i
+
 
 nums = [59, 90, 96, 12, 28, 34, 88, 13, 48, 77]
-sort(nums)
+sort(nums, 0, len(nums)- 1)
 
 print(nums)
