@@ -30,6 +30,8 @@ def sort(nums):
             j += 1
             k += 1
 
+        print(nums)
+
 nums = [59, 90, 96, 12, 28, 34, 88, 13, 48, 77]
 sort(nums)
 
